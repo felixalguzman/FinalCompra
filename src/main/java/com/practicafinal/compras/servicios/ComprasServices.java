@@ -47,6 +47,11 @@ public class ComprasServices {
         return compraPaginacionRepository.findAll(pageable).getContent();
     }
 
+    public List<Compra> comprasPorPaginacionPorCliente(Pageable pageable, Cliente cliente) {
+
+        return compraPaginacionRepository.findAllByCliente(pageable, cliente).getContent();
+    }
+
     public Compra compraPorId(Long id){
 
         return compraRepository.findById(id).orElse(null);
