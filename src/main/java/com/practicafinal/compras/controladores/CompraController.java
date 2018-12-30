@@ -38,7 +38,7 @@ public class CompraController {
         return new ResponseEntity<>(comprasServices.buscarPorCliente(cliente), HttpStatus.OK);
     }
 
-    @RequestMapping(value = "/compras/", method = RequestMethod.GET, params = {"limit", "offset"})
+    @RequestMapping(value = "/compras/paginacion", method = RequestMethod.GET, params = {"limit", "offset"})
     public ResponseEntity<List<Compra>> comprasPorPaginacion(@RequestParam("limit") int limit, @RequestParam("offset") int offset){
 
         Pageable pageable = PageRequest.of(offset, limit);

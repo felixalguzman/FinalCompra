@@ -1,5 +1,8 @@
 package com.practicafinal.compras.servicios;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.practicafinal.compras.entidades.Articulo;
 import com.practicafinal.compras.entidades.ArticuloCompra;
 import com.practicafinal.compras.entidades.Cliente;
@@ -7,17 +10,13 @@ import com.practicafinal.compras.entidades.Compra;
 import com.practicafinal.compras.repositorios.ArticuloCompraRepository;
 import com.practicafinal.compras.repositorios.CompraPaginacionRepository;
 import com.practicafinal.compras.repositorios.CompraRepository;
+
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.List;
-
 @Service
 public class ComprasServices {
-
 
     @Autowired
     private CompraRepository compraRepository;
