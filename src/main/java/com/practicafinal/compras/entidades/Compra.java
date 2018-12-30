@@ -1,9 +1,6 @@
 package com.practicafinal.compras.entidades;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import java.time.Instant;
 import java.util.Date;
 import java.util.Set;
@@ -15,6 +12,7 @@ public class Compra {
     @GeneratedValue
     private Long id;
 
+    @OneToOne
     private Cliente cliente;
 
     @OneToMany
@@ -29,7 +27,8 @@ public class Compra {
         fechaCompra = Date.from(Instant.now());
     }
 
-    public Compra(Set<ArticuloCompra> articuloCompras, Date fechaCompra) {
+    public Compra(Cliente cliente, Set<ArticuloCompra> articuloCompras, Date fechaCompra) {
+        this.cliente = cliente;
         this.articuloCompras = articuloCompras;
         this.fechaCompra = fechaCompra;
     }
@@ -40,6 +39,14 @@ public class Compra {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public Cliente getCliente() {
+        return cliente;
+    }
+
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
     }
 
     public Set<ArticuloCompra> getArticuloCompras() {
