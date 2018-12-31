@@ -29,11 +29,13 @@ public class Cliente implements Serializable {
 
     private Date fechaNacimiento;
 
+    private String contrasena;
+
 
     public Cliente() {
     }
 
-    public Cliente(Long id, String foto, String nombre, String correo, String telefono, String direccion, Date fechaNacimiento) {
+    public Cliente(Long id, String foto, String nombre, String correo, String telefono, String direccion, Date fechaNacimiento, String contrasena) {
         this.id = id;
         this.foto = foto;
         this.nombre = nombre;
@@ -41,6 +43,7 @@ public class Cliente implements Serializable {
         this.telefono = telefono;
         this.direccion = direccion;
         this.fechaNacimiento = fechaNacimiento;
+        this.contrasena = contrasena;
     }
 
     public Long getId() {
@@ -97,6 +100,20 @@ public class Cliente implements Serializable {
 
     public void setFechaNacimiento(Date fechaNacimiento) {
         this.fechaNacimiento = fechaNacimiento;
+    }
+
+    /**
+     * @return the contrasena
+     */
+    public String getContrasena() {
+        return contrasena;
+    }
+
+    /**
+     * @param contrasena the contrasena to set
+     */
+    public void setContrasena(String contrasena) {
+        this.contrasena = contrasena;
     }
 
 }
